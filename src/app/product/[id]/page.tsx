@@ -5,6 +5,8 @@ import Link from "next/link";
 import { fetchProductById } from "@/app/libs/productDetailsApi";
 import { fetchProducts } from "@/app/libs/productsApi";
 import AddToCartButton from "@/app/components/addToCartButton";
+import { FaStar } from "react-icons/fa";
+import { FaBagShopping } from "react-icons/fa6";
 
 type Props = {
   params: { id: string };
@@ -32,32 +34,48 @@ export async function generateStaticParams() {
 // 🔹 Main Page
 export default async function ProductDetails({ params }: Props) {
   const product = await fetchProductById(params.id);
+  console.log(product);
 
   if (!product) return notFound();
 
   return (
-    <main className="p-6 max-w-4xl mx-auto">
+    <main className="p-6 mt-10 mb-10 max-w-4xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Image
           src={product.image}
           alt={product.title}
-          width={400}
+          width={200}
           height={400}
           className="object-contain mx-auto"
         />
-        <div>
+        <div className="space-y-4">
           <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
+          <p>{product.category}</p>
+
+          <div className="flex gap-4 items-center">
+            <div className="flex text-yellow-400 items-center gap-2">
+              <FaStar size={20} />
+              <FaStar size={20} />
+              <FaStar size={20} />
+              <FaStar size={20} />
+            </div>
+            <p>{product.rating.rate}</p>
+            <p>( {product.rating.count} reviews )</p>
+          </div>
+
           <p className="text-gray-600 mb-4">{product.description}</p>
           <p className="text-xl font-semibold text-green-600 mb-4">
             ${product.price}
           </p>
-          <AddToCartButton product={product} />
-          <Link
-            href={"/"}
-            className="border py-2 px-2 rounded ml-10 bg-green-600 text-white"
-          >
-            Back to shop
-          </Link>
+          <div className="flex">
+            <AddToCartButton product={product} />
+            <Link
+              href={"/"}
+              className="border cursor-pointer items-center flex gap-2 py-2 px-2 rounded ml-10 bg-green-600 text-white"
+            >
+              <FaBagShopping /> Back to shop
+            </Link>
+          </div>
         </div>
       </div>
     </main>
