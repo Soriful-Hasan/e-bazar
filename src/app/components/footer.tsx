@@ -10,12 +10,12 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
-            <a
-              href="#"
-              className="font-['Pacifico'] text-2xl text-primary inline-block mb-4"
+            <Link
+              href="/"
+              className="font-['Pacifico'] text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
             >
-              logo
-            </a>
+              E-Bazar
+            </Link>
 
             <p className="text-gray-600 mb-6 max-w-md">
               We offer premium quality clothing and accessories for men and

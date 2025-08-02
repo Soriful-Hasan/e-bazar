@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function SuccessMessage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 flex items-center justify-center py-30 px-4">
+    <div className="min-h-screen   flex items-center justify-center py-30 px-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Animated Success Icon */}
         <div className="relative mb-8">
@@ -24,7 +24,7 @@ export default function SuccessMessage() {
         </div>
 
         {/* Main Success Card */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-10 relative overflow-hidden">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 p-10 relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-yellow-400/20 to-green-400/20 rounded-full blur-2xl"></div>

@@ -39,12 +39,12 @@ export default async function ProductDetails({ params }: Props) {
   if (!product) return notFound();
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 mt-20 mb-10">
+    <main className="min-h-screen bg-gradient-to-br  p-6 mt-20 mb-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Product Image Section */}
           <div className="relative group">
-            <div className="bg-white rounded-3xl  p-8 border border-gray-100 overflow-hidden">
+            <div className=" rounded-3xl  p-8 border bg-gray-50 border-gray-100 overflow-hidden">
               {/* Background Decorative Elements */}
               <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-br from-pink-200/30 to-orange-200/30 rounded-full blur-3xl"></div>

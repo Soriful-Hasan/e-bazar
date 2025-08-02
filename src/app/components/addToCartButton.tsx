@@ -1,4 +1,5 @@
 "use client";
+import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice";
 import { Product } from "../libs/productDetailsApi";
@@ -13,7 +14,7 @@ export default function AddToCartButton({ product }: Props) {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
-    alert("✅ Added to cart!");
+    toast.success("Added to cart");
   };
 
   return (

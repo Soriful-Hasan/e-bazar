@@ -9,6 +9,7 @@ import {
   X,
   ChevronDown,
   Heart,
+  ShoppingCart,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -32,7 +33,6 @@ export default function Navbar() {
 
   return (
     <div className="">
-      {" "}
       {/* Add padding to account for fixed navbar */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,7 +47,7 @@ export default function Navbar() {
             href="/"
             className="font-['Pacifico'] text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
           >
-            StyleHub
+            E-Bazar
           </Link>
 
           {/* Main Navigation */}
@@ -184,7 +184,7 @@ export default function Navbar() {
             {/* Cart */}
             <Link href="/cart">
               <button className="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-full transition-all duration-300 relative">
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingCart className="w-5 h-5" />
                 {cartItemsCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold animate-pulse">
                     {cartItemsCount}
