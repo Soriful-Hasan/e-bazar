@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductDetails({ params }: PageProps) {
-  console.log(params);
+ 
   const p = await params;
   const product = await fetchProductById(p.id);
 
