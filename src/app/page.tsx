@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchProducts } from "./libs/productsApi";
+import { fetchProducts } from "../libs/productsApi";
 import Hero from "./components/hero";
 
 export default async function Products() {

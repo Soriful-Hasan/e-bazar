@@ -2,7 +2,7 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice";
-import { Product } from "../libs/productDetailsApi";
+import { Product } from "../../libs/productDetailsApi";
 import { MdShoppingCart } from "react-icons/md";
 
 type Props = {

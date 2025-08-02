@@ -2,8 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { fetchProductById } from "@/app/libs/productDetailsApi";
-import { fetchProducts } from "@/app/libs/productsApi";
+import { fetchProductById } from "@/libs/productDetailsApi";
+import { fetchProducts } from "@/libs/productsApi";
 import AddToCartButton from "@/app/components/addToCartButton";
 import { FaBagShopping } from "react-icons/fa6";
 
@@ -33,7 +33,6 @@ export async function generateStaticParams() {
 //  Main Page
 export default async function ProductDetails({ params }: Props) {
   const product = await fetchProductById(params.id);
- 
 
   if (!product) return notFound();
 
@@ -56,7 +55,7 @@ export default async function ProductDetails({ params }: Props) {
                   height={300}
                   className="object-contain max-h-full group-hover:scale-110 transition-transform duration-700"
                 />
-              </div>            
+              </div>
             </div>
           </div>
 
@@ -209,7 +208,6 @@ export default async function ProductDetails({ params }: Props) {
               </div>
             </div>
 
-          
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <AddToCartButton product={product} />
