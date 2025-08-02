@@ -7,14 +7,15 @@ import AddToCartButton from "@/app/components/addToCartButton";
 import { FaBagShopping } from "react-icons/fa6";
 import { Metadata } from "next";
 
-type Props = {
-  params: {
-    id: string;
-  };
+export type PageProps = {
+  params: Promise<{ id: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = await fetchProductById(params.id);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const p = await params;
+  const product = await fetchProductById(p.id);
 
   return {
     title: product.title,
@@ -30,8 +31,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProductDetails({ params }: Props) {
-  const product = await fetchProductById(params.id);
+export default async function ProductDetails({ params }: PageProps) {
+  console.log(params);
+  const p = await params;
+  const product = await fetchProductById(p.id);
 
   if (!product) return notFound();
 
