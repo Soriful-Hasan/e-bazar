@@ -6,6 +6,7 @@ import Navbar from "./components/navBar";
 import Hero from "./components/hero";
 import Footer from "./components/footer";
 import { Toaster } from "react-hot-toast";
+import Products from "./page";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

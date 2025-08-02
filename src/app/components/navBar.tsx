@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+
 import {
   Search,
   User,
@@ -45,9 +46,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-['Pacifico'] text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+            className="flex  gap-2 items-center font-['Pacifico'] text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
           >
-            E-Bazar
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl ">
+              <ShoppingBag className="w-5 h-5 text-white" />
+            </div>{" "}
+            
           </Link>
 
           {/* Main Navigation */}
