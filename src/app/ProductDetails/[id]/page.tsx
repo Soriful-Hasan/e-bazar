@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { fetchProductById } from "@/app/libs/productDetailsApi";
 import { fetchProducts } from "@/app/libs/productsApi";
+import AddToCartButton from "@/app/components/addToCartButton";
 
 type Props = {
   params: { id: string };
@@ -50,7 +51,7 @@ export default async function ProductDetails({ params }: Props) {
           <p className="text-xl font-semibold text-green-600 mb-4">
             ${product.price}
           </p>
-          {/* <AddToCartButton product={product} /> */}
+          <AddToCartButton product={product} />
           <Link
             href={"/"}
             className="border py-2 px-2 rounded ml-10 bg-green-600 text-white"
