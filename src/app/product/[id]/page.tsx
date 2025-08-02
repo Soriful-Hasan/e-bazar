@@ -1,17 +1,18 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import Link from "next/link";
 import { fetchProductById } from "@/libs/productDetailsApi";
 import { fetchProducts } from "@/libs/productsApi";
 import AddToCartButton from "@/app/components/addToCartButton";
 import { FaBagShopping } from "react-icons/fa6";
+import { Metadata } from "next";
 
 type Props = {
-  params: { id: string };
+  params: {
+    id: string;
+  };
 };
 
-//  For SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await fetchProductById(params.id);
 
@@ -21,7 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-//  For SSG paths
 export async function generateStaticParams() {
   const products = await fetchProducts();
 
@@ -30,7 +30,6 @@ export async function generateStaticParams() {
   }));
 }
 
-//  Main Page
 export default async function ProductDetails({ params }: Props) {
   const product = await fetchProductById(params.id);
 
